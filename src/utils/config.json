@@ -1,0 +1,8 @@
+{
+    "API_URL": "https://prms.peaceradio.com/courses2/apis/",
+    "PAGE_LOAD_API_URI": "register/getRegisteredCandidatesData.php",
+    "HOMETAB_API_URI": "course/getHomePageForCourse.php",
+    "MODULETAB_API_URI": "course/getModulePageForCourse.php"
+
+
+}
