@@ -34,7 +34,6 @@ export default function CoursesList() {
   const { user, setUser } = useContext(UserContext);
   const { course, setCourse } = useContext(CourseContext);
 
-  console.log(user, "CL")
   return (
     <Container m={2} className={classes.root}>
       <Container m={2}>

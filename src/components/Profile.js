@@ -79,7 +79,7 @@ function Profile({ handleChangeTab }) {
     history("/membercourselist");
     // handleChangeTab(1)
   }
-  console.log(user, "P")
+
   const classes = useStyles();
   return (
     user.success === "Y" ? (

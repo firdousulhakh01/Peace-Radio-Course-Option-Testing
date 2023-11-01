@@ -29,7 +29,7 @@ function App() {
     seek: 0,
     src: '',
   });
-  // const [test, setTest] = useState(0)
+
   useEffect(() => {
     async function loginAndSetUser() {
       const res = await login();
@@ -37,9 +37,9 @@ function App() {
 
     }
     loginAndSetUser();
-    // setTest(1)
+
   }, [])
-  console.log(user, "App")
+
   return (
     <ThemeProvider theme={theme}>
       <UserContext.Provider value={{ user, setUser }}>
@@ -48,7 +48,6 @@ function App() {
             <ScrollToTop />
             <div className="App">
               <NavBar></NavBar>
-              {/* <p style={{ position: 'fixed', top: '200px' }}>{test}</p> */}
               <AnimatePresence>
                 <Routes location={location} key={location.key}>
                   <Route path="/" element={<UserLanding />} />

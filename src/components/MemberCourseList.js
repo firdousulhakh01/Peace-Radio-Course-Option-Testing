@@ -1,11 +1,10 @@
-import React, { useContext, useRef } from 'react';
+import React, { useRef } from 'react';
 import ProfileSingle from './ProfileSingle';
 import CoursesList from './CoursesList';
 import Paper from '@material-ui/core/Paper';
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { UserContext } from '../contexts/UserContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,11 +33,11 @@ function MemberCourseList() {
   const classes = useStyles();
   const theme = useTheme();
   const appBar = useRef()
-  const { user, setUser } = useContext(UserContext);
+
   const scrollToTop = (index) => {
     window.scrollTo(0, appBar.current.offsetTop)
   };
-  console.log(user, "MCL")
+
   return (
     <Paper ref={appBar} className={classes.root}>
       <AppBar position="static" className={classes.removeShadow}>

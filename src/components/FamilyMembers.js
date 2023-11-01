@@ -48,8 +48,6 @@ function FamilyMembers({ members, handleChangeTab }) {
     history("/membercourselist");
   }
 
-  console.log(user, "FM")
-
   return (
     <Container maxWidth={false} m={2} className={classes.root}>
       <Container maxWidth={false} m={2}>

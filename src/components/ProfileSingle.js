@@ -78,7 +78,7 @@ function Profile() {
   const handleSelectUserButton = () => {
     history("/");
   }
-  console.log(user, "PS")
+
   const classes = useStyles();
   return (
     user.success === "Y" ? (

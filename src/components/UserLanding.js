@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Profile from './Profile';
 import Paper from '@material-ui/core/Paper';
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { UserContext } from '../contexts/UserContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,8 +32,7 @@ const useStyles = makeStyles((theme) => ({
 function UserLanding() {
   const classes = useStyles();
   const theme = useTheme();
-  const { user } = useContext(UserContext)
-  console.log(user, "UL")
+
   return (
     <Paper className={classes.root}>
       <AppBar position="static" className={classes.removeShadow}>
