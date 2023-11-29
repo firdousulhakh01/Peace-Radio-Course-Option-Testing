@@ -77,6 +77,7 @@ function Profile() {
   const history = useNavigate();
   const handleSelectUserButton = () => {
     history("/");
+    setUser({ ...user, selectedUser: 0 })
   }
 
   const classes = useStyles();

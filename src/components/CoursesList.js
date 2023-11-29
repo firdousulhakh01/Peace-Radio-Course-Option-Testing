@@ -44,8 +44,8 @@ export default function CoursesList() {
       <List component="nav" className={classes.root}>
         <motion.div initial="hidden" animate="visible" variants={listVariants}>
           {user.memberList[user.selectedUser].coursesList.filter(course => course.enrolled === 'Y').map((course, index) =>
-            <motion.div variants={listItemXVariants}>
-              <Course courseProp={course} key={index}></Course>
+            <motion.div variants={listItemXVariants} key={index}>
+              <Course courseProp={course}></Course>
             </motion.div>
           )}
         </motion.div>
@@ -59,8 +59,8 @@ export default function CoursesList() {
       <List component="nav" className={classes.root}>
         <motion.div initial="hidden" animate="visible" variants={listVariants}>
           {user.memberList[user.selectedUser].coursesList.filter(course => course.enrolled === 'N').map((course, index) =>
-            <motion.div variants={listItemXVariants}>
-              <Course courseProp={course} key={index}></Course>
+            <motion.div variants={listItemXVariants} key={index}>
+              <Course courseProp={course}></Course>
             </motion.div>
           )}
         </motion.div>

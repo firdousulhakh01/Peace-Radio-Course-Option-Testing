@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.dark,
     zIndex: 1500,
     boxShadow: "none",
-    // marginTop: "14vw",
+    marginTop: "60px",
+    paddingBottom: '50px'
   },
   tab: {
     position: "relative",
@@ -40,11 +41,11 @@ function MemberCourseList() {
 
   return (
     <Paper ref={appBar} className={classes.root}>
-      <AppBar position="static" className={classes.removeShadow}>
+      {/* <AppBar position="static" className={classes.removeShadow}>
         <Toolbar>
         </Toolbar>
-      </AppBar>
-      <ProfileSingle />
+      </AppBar> */}
+      {/* <ProfileSingle /> */}
       <CoursesList />
     </Paper>
 

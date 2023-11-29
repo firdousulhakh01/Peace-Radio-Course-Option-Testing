@@ -74,6 +74,7 @@ function CourseSelectionCard() {
   const classes = useStyles();
 
   const handleClickUser = () => {
+    setUser({ ...user, selectedUser: 0 })
     history('/')
   }
 

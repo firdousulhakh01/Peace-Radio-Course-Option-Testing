@@ -6,8 +6,8 @@ import Button from '@material-ui/core/Button';
 import { UserContext } from '../contexts/UserContext';
 import FamilyMembers from './FamilyMembers';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { motion } from 'framer-motion';
-import { listVariants, listItemXVariants, listItemYVariants } from '../ui/MotionVariants';
+// import { motion } from 'framer-motion';
+// import { listVariants, listItemXVariants, listItemYVariants } from '../ui/MotionVariants';
 import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({

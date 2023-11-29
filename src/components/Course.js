@@ -30,11 +30,11 @@ function Course({ courseProp, key }) {
   const history = useNavigate();
 
   const handleCourseClick = () => {
-    console.log('course.selectedCourse', courseProp)
+    //console.log('course.selectedCourse', courseProp)
     setCourse({ ...course, selectedCourse: courseProp })
     history("/home");
   }
-
+  //console.log(course, "course")
   return (
     <React.Fragment>
       <ListItem button alignItems="flex-start" className={classes.courseText} onClick={handleCourseClick} key={key}>

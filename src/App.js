@@ -39,7 +39,7 @@ function App() {
     loginAndSetUser();
 
   }, [])
-
+  console.log(user)
   return (
     <ThemeProvider theme={theme}>
       <UserContext.Provider value={{ user, setUser }}>
