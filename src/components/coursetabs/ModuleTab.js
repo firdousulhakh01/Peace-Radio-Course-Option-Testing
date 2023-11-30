@@ -28,6 +28,7 @@ function ModuleTab() {
       setCourse({ ...course, moduleTabData: res })
     }
     getModuleTabData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   console.log(course, 'tHome')
   return (

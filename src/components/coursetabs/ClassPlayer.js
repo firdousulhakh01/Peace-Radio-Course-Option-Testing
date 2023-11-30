@@ -160,7 +160,7 @@ function ClassPlayer({ classData }) {
   const formatDuration = duration => moment.duration(duration, "seconds").format("mm:ss", { trim: false });
 
   const classes = useStyles();
-  // const theme = useTheme();
+  // const theme = useTheme(); 
 
 
   useEffect(() => {
@@ -170,6 +170,7 @@ function ClassPlayer({ classData }) {
       console.log("loaded src", player.src);
       player.playing && setPlaying(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [player.src])
   // console.log("t2")
   return (

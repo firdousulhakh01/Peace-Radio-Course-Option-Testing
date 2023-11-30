@@ -18,6 +18,7 @@ function HomeTab() {
       setCourse({ ...course, homeTabData: res })
     }
     getHomeTabData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   // console.log(course, "test")
   return (
