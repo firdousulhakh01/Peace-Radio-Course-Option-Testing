@@ -85,7 +85,7 @@ function Profile({ handleChangeTab }) {
     user.success === "Y" ? (
       <Container maxWidth={false} className={classes.root2}>
         <Container maxWidth={false} m={2} className={classes.root}>
-          <Typography className={classes.text} variant="h4">{user.memberList[0].name}</Typography>
+          <Typography className={classes.text} variant="h4">Firdous</Typography>
           {/* <Typography className={classes.textp} variant="body1">muhammadanas@gmail.com</Typography> */}
           <Typography className={classes.textp} variant="body1">Mobile: {user.memberList[0].mobile}</Typography>
           <Typography className={classes.textp} variant="body1">Country: {user.memberList[0].country}</Typography>
