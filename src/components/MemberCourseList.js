@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
-import ProfileSingle from './ProfileSingle';
+// import ProfileSingle from './ProfileSingle';
 import CoursesList from './CoursesList';
 import Paper from '@material-ui/core/Paper';
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+// import AppBar from '@material-ui/core/AppBar'
+// import Toolbar from '@material-ui/core/Toolbar'
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,12 +32,12 @@ const useStyles = makeStyles((theme) => ({
 
 function MemberCourseList() {
   const classes = useStyles();
-  const theme = useTheme();
+  // const theme = useTheme();
   const appBar = useRef()
 
-  const scrollToTop = (index) => {
-    window.scrollTo(0, appBar.current.offsetTop)
-  };
+  // const scrollToTop = (index) => {
+  //   window.scrollTo(0, appBar.current.offsetTop)
+  // };
 
   return (
     <Paper ref={appBar} className={classes.root}>

@@ -3,7 +3,7 @@ import HelpData from './HelpTabData'
 
 const HelpTab = () => {
   const [expanded, setExpanded] = React.useState('');
-  // const [test, setTest] = useState(['Course Work', 'Review'])
+  // const [test, setTest] = useState(['Course Work', 'Review']) 
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, Avatar, Paper } from '@material-ui/core'
+import { Typography, Avatar } from '@material-ui/core'
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
@@ -60,11 +60,12 @@ const AccordionDetails = withStyles((theme) => ({
 const Menu = (props) => {
   // console.log(props.abc === props.idd)
   return (
-    <Accordion onChange={props.fn(props.idd)} expanded={props.abc === props.idd} elevation={2}>
+    <Accordion onChange={props.fn(props.idd)} expanded={props.abc === props.idd} elevation={2} style={{ position: 'sticky', top: '300px' }}>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon className={props.classes.expandIcon} />}
         aria-controls=""
         id=""
+
       >
         <Avatar className={props.classes.avatar}>
           <SchoolIcon />

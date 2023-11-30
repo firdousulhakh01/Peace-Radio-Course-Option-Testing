@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { AppBar, Typography, IconButton, Toolbar, Avatar } from '@material-ui/core'
+import { AppBar, Typography, IconButton, Toolbar } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 // import { MenuIcon } from '@material-ui/icons'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';

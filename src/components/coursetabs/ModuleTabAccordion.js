@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react'
-import { UserContext } from '../../contexts/UserContext';
+import React, { useContext } from 'react'
+// import { UserContext } from '../../contexts/UserContext';
 import { CourseContext } from '../../contexts/CourseContext';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -8,15 +8,16 @@ import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import Avatar from '@material-ui/core/Avatar';
 import SchoolIcon from '@material-ui/icons/School';
-import ClassPlayer from './ClassPlayer';
+// import ClassPlayer from './ClassPlayer';
 import ClassReferenceQuestionTab from './ModuleTabQuestionClassReference';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
-import StopIcon from '@material-ui/icons/Stop';
+// import StopIcon from '@material-ui/icons/Stop';
 import Fade from '@material-ui/core/Fade';
 import { PlayerContext } from '../../contexts/PlayerContext';
-import ListSkeleton from '../../ui/ListSkeleton';
+// import ListSkeleton from '../../ui/ListSkeleton';
 import Menu from '../firdous/Menu'
+import VideocamIcon from '@material-ui/icons/Videocam';
 // import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 // import samplePDF from '../../files/girls.pdf'
 
@@ -33,6 +34,14 @@ const useStyles = makeStyles((theme) => ({
     // flexShrink: 0,
     color: theme.palette.primary.dark,
     alignSelf: 'center',
+  },
+  subHead: {
+    fontSize: theme.typography.pxToRem(13),
+    marginLeft: '20px',
+    fontWeight: 700,
+    // flexShrink: 0,
+    color: theme.palette.primary.dark,
+    alignSelf: 'center'
   },
   detailText: {
     fontSize: theme.typography.pxToRem(14),
@@ -131,11 +140,11 @@ function ModuleTabAccordion() {
   };
 
   const { player, setPlayer } = useContext(PlayerContext);
-  const { course, setCourse } = useContext(CourseContext);
-  const { user, setUser } = useContext(UserContext);
+  const { course } = useContext(CourseContext);
+  // const { user, setUser } = useContext(UserContext);
 
-  const removeHtml = /(<([^>]+)>)/ig
-  const removeSlashNR = /(?:\r\n|\r|\n)/g
+  // const removeHtml = /(<([^>]+)>)/ig
+  // const removeSlashNR = /(?:\r\n|\r|\n)/g
 
   const handlePlay = (i, c, e) => {
     // e.preventDefault();
@@ -150,7 +159,7 @@ function ModuleTabAccordion() {
     });
     // setPlaying(true);
   }
-
+  console.log(course, 'testt')
   return (
     <div className={classes.root}>
       {course.moduleTabData && course.moduleTabData.modulesList[0].questionsList.map(
@@ -163,7 +172,24 @@ function ModuleTabAccordion() {
                 <SchoolIcon />
               </Avatar>
               <Typography className={classes.heading}>Class {cl.class}</Typography>
+              <Fade
+                in={expanded === `panel${(index + 1)}`}
+                timeout={500}
+              >
 
+                <Typography className={classes.subHead}>Class short details</Typography>
+
+
+              </Fade>
+              <Fade
+                in={expanded === `panel${(index + 1)}`}
+                timeout={500}
+              >
+                <Avatar className={classes.avatarPlay}>
+                  <VideocamIcon />
+                </Avatar>
+
+              </Fade>
               <Fade
                 in={expanded === `panel${(index + 1)}`}
                 timeout={500}

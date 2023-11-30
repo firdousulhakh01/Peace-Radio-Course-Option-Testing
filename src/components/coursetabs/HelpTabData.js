@@ -6,6 +6,8 @@ import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import SchoolIcon from '@material-ui/icons/School';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+// import { Document } from 'react-pdf/dist/esm';
+import pdfPath from '../../files/girls.pdf'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -106,7 +108,7 @@ const AccordionDetails = withStyles((theme) => ({
 }))(MuiAccordionDetails);
 
 const HelpTab = (props) => {
-
+  // const pdfPath=''
   const classes = useStyles();
   // console.log(expanded === props.idd, 'help')
   return (
@@ -124,7 +126,7 @@ const HelpTab = (props) => {
       </AccordionSummary>
       <AccordionDetails>
         <div style={{ padding: '25px' }}>
-          Content
+          <iframe src={pdfPath} width="100%" height="600" title='Demo'></iframe>
         </div>
       </AccordionDetails>
     </Accordion>

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
-import { Typography, Avatar, Divider, List, ListItemText, ListItemIcon, ListItem } from '@material-ui/core';
+import { Avatar, Divider, List, ListItemText, ListItemIcon, ListItem } from '@material-ui/core';
 import PersonIcon from '@material-ui/icons/Person';
 import { UserContext } from '../../contexts/UserContext';
 import { useNavigate } from 'react-router-dom';
@@ -116,7 +116,7 @@ export default function SimpleModal() {
     <div>
       {/* <button type="button" onClick={handleOpen}> */}
       <Avatar onClick={handleOpen} title={user.memberList[user.selectedUser].name}>
-        {photo === true ? <img src={photo} width={40} height={40} /> : user.memberList[user.selectedUser].name.charAt(0).toUpperCase()}
+        {photo === true ? <img src={photo} width={40} height={40} alt='firduos' /> : user.memberList[user.selectedUser].name.charAt(0).toUpperCase()}
       </Avatar>
       {/* </button> */}
       <Modal

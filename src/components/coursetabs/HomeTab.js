@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import CourseSelectionCard from './CourseSelectionCard';
+// import CourseSelectionCard from './CourseSelectionCard';
 import CourseHomeAccordion from './CourseHomeAccordian';
 import homeTabFetch from '../../utils/hometab';
 import { UserContext } from '../../contexts/UserContext';
@@ -7,8 +7,8 @@ import { CourseContext } from '../../contexts/CourseContext';
 
 function HomeTab() {
   const { course, setCourse } = useContext(CourseContext);
-  const { user, setUser } = useContext(UserContext);
-  const [homeTabData, setHomeTabData] = useState(null)
+  const { user } = useContext(UserContext);
+  const [, setHomeTabData] = useState(null)
 
   useEffect(() => {
     async function getHomeTabData() {

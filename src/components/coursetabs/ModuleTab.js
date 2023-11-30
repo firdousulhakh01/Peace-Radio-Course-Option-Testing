@@ -3,20 +3,20 @@ import moduleTabFetch from '../../utils/moduletab';
 import { UserContext } from '../../contexts/UserContext';
 import { CourseContext } from '../../contexts/CourseContext';
 import ModuleTabAccordion from './ModuleTabAccordion';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+// import { makeStyles} from '@material-ui/core/styles';
 import ListSkeleton from '../../ui/ListSkeleton';
 
 function ModuleTab() {
   const { course, setCourse } = useContext(CourseContext);
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const [loader, setLoader] = useState(true);
   // const [ moduleTabData, setModuleTabData ] = useState(null)
 
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      color: theme.palette.primary.dark
-    }
-  }))
+  // const useStyles = makeStyles((theme) => ({
+  //   root: {
+  //     color: theme.palette.primary.dark
+  //   }
+  // }))
 
   useEffect(() => {
     // setLoader(true);

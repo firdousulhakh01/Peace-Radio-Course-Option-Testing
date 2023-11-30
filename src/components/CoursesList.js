@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { UserContext } from '../contexts/UserContext';
-import { CourseContext } from '../contexts/CourseContext';
+// import { CourseContext } from '../contexts/CourseContext';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import Course from './Course';
@@ -31,8 +31,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CoursesList() {
   const classes = useStyles();
-  const { user, setUser } = useContext(UserContext);
-  const { course, setCourse } = useContext(CourseContext);
+  const { user } = useContext(UserContext);
+  // const { course, setCourse } = useContext(CourseContext);
 
   return (
     <Container m={2} className={classes.root}>
