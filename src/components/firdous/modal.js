@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     left: '50%',
     transform: 'translateX(-50%) translateY(-50%)',
     top: '50%',
-    width: '50vw',
+    width: '70vw',
     maxHeight: '40vh',  // Set a maximum height, adjust as needed
     overflowY: 'auto',
     backgroundColor: theme.palette.background.paper,
@@ -116,7 +116,7 @@ export default function SimpleModal() {
     <div>
       {/* <button type="button" onClick={handleOpen}> */}
       <Avatar onClick={handleOpen} title={user.memberList[user.selectedUser].name}>
-        {photo === true ? <img src={photo} width={40} height={40} alt='firduos' /> : user.memberList[user.selectedUser].name.charAt(0).toUpperCase()}
+        {photo === true ? <img src={photo} width={40} height={40} alt='firdous' /> : user.memberList[user.selectedUser].name.charAt(0).toUpperCase()}
       </Avatar>
       {/* </button> */}
       <Modal
