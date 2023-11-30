@@ -1,5 +1,5 @@
 import React, { useContext, useRef, useEffect, useState } from 'react'
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -20,7 +20,7 @@ import Badge from '@material-ui/core/Badge';
 import Slider from '@material-ui/core/Slider';
 import useAudioPlayer from '../../utils/useAudioPlayer';
 import moment from 'moment';
-import momentDurationFormatSetup from "moment-duration-format";
+import "moment-duration-format";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -160,7 +160,7 @@ function ClassPlayer({ classData }) {
   const formatDuration = duration => moment.duration(duration, "seconds").format("mm:ss", { trim: false });
 
   const classes = useStyles();
-  const theme = useTheme();
+  // const theme = useTheme();
 
 
   useEffect(() => {

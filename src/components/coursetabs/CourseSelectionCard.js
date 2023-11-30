@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function CourseSelectionCard() {
-  const { course, setCourse } = useContext(CourseContext);
+  const { course } = useContext(CourseContext);
   const { user, setUser } = useContext(UserContext);
   const history = useNavigate();
   const classes = useStyles();
