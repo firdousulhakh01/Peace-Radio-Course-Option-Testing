@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     transform: 'translateX(-50%) translateY(-50%)',
     top: '50%',
     width: '70vw',
-    maxHeight: '40vh',  // Set a maximum height, adjust as needed
+    maxHeight: '60vh',  // Set a maximum height, adjust as needed
     overflowY: 'auto',
     backgroundColor: theme.palette.background.paper,
     border: '4px solid #00A881',

@@ -12,7 +12,8 @@ const HelpTab = () => {
     <div style={{ margin: '10px' }}>
       <HelpData id='h1' label='FAQ' fn={handleChange} exp={expanded} />
       <HelpData id='h2' label='Late Exam Request' fn={handleChange} exp={expanded} />
-      <HelpData id='h3' label='Enrollment Page' fn={handleChange} exp={expanded} />
+      <HelpData id='h3' label='Testimonials' fn={handleChange} exp={expanded} />
+      <HelpData id='h4' label='Doubt Submission' fn={handleChange} exp={expanded} />
       {/* <HelpData id='h1' label='FAQ' /> */}
     </div>
   )

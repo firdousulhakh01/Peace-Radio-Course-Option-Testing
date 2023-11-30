@@ -6,6 +6,7 @@ import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
+import Button from '@material-ui/core/Button';
 import SchoolIcon from '@material-ui/icons/School';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import { makeStyles } from '@material-ui/core/styles';
@@ -34,7 +35,7 @@ function Course({ courseProp, key }) {
     setCourse({ ...course, selectedCourse: courseProp })
     history("/home");
   }
-  //console.log(course, "course")
+  console.log(course, "course")
   return (
     <React.Fragment>
       <ListItem button alignItems="flex-start" className={classes.courseText} onClick={handleCourseClick} key={key}>
@@ -47,7 +48,8 @@ function Course({ courseProp, key }) {
           secondary={courseProp.description}
         />
         <ListItemSecondaryAction>
-          <CircularProgressWithLabel value={courseProp.percentageCompletion} />
+          {courseProp.enrolled !== 'N' ? <CircularProgressWithLabel value={courseProp.percentageCompletion} /> :
+            <Button variant="contained">Enroll</Button>}
 
         </ListItemSecondaryAction>
       </ListItem>

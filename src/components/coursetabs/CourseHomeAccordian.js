@@ -66,7 +66,7 @@ function CourseHomeAccordion() {
   return (
     <div className={classes.root}>
       {/* <div style={{ color: "red" }}>firdous</div> */}
-      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} classes={{ expanded: classes.expanded, root: classes.accordionRoot }}>
+      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} className={{ expanded: classes.expanded, root: classes.accordionRoot }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon className={classes.expandIcon} />}
           aria-controls="panel1bh-content"

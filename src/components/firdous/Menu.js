@@ -6,7 +6,7 @@ import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import { withStyles } from '@material-ui/core/styles';
 import SchoolIcon from '@material-ui/icons/School';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Mqs from '../coursetabs/QuestionDisplay'
+// import Mqs from '../coursetabs/QuestionDisplay'
 
 const Accordion = withStyles({
   root: {
@@ -74,11 +74,7 @@ const Menu = (props) => {
       </AccordionSummary>
       <AccordionDetails>
         <div style={{ padding: '25px' }}>
-          <Mqs qsObj={props.samD[0].questions} />
-          <Mqs qsObj={props.samD[1].questions} />
-          <Mqs qsObj={props.samD[2].questions} />
-          <Mqs qsObj={props.samD[3].questions} />
-          <Mqs qsObj={props.samD[4].questions} />
+          Content here
         </div>
       </AccordionDetails>
     </Accordion>

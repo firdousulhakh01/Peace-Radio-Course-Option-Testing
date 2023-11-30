@@ -208,18 +208,13 @@ function ModuleTabAccordion() {
             </AccordionDetails>
           </Accordion>
       )}
-      {/* <Menu classes={classes} label="Course Work" fn={handleChange} abc={expanded} idd="a1" samD={course.moduleTabData.modulesList[0].questionsList}></Menu>
-      <Menu classes={classes} label="Review" fn={handleChange} abc={expanded} idd="a2"></Menu> */}
-      <Menu classes={classes} label="Model Exam" fn={handleChange} abc={expanded} idd="a3" samD={course.moduleTabData.modulesList[0].questionsList} />
-      <Menu classes={classes} label="Final Exam" fn={handleChange} abc={expanded} idd="a4" samD={course.moduleTabData.modulesList[0].questionsList} />
-      {/* <Menu classes={classes} label="Result" fn={handleChange} abc={expanded} idd="a5"></Menu>
-      <Menu classes={classes} label="Feedback" fn={handleChange} abc={expanded} idd="a6"></Menu>
-      <Menu classes={classes} label="Certificate" fn={handleChange} abc={expanded} idd="a7"></Menu> */}
-      {/* <div>
-        <Document file={samplePDF}>
-          <Page pageNumber={1} />
-        </Document>
-      </div> */}
+
+      <Menu classes={classes} label="Course Work" fn={handleChange} abc={expanded} idd="a1" />
+      <Menu classes={classes} label="Review" fn={handleChange} abc={expanded} idd="a2" />
+      <Menu classes={classes} label="Result" fn={handleChange} abc={expanded} idd="a3" />
+      <Menu classes={classes} label="Feedback" fn={handleChange} abc={expanded} idd="a4" />
+      <Menu classes={classes} label="Certificate" fn={handleChange} abc={expanded} idd="a5" />
+
 
     </div>
   )
