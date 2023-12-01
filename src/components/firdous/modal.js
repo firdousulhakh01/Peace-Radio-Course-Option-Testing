@@ -6,6 +6,7 @@ import PersonIcon from '@material-ui/icons/Person';
 import { UserContext } from '../../contexts/UserContext';
 import { useNavigate } from 'react-router-dom';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import EditIcon from '@material-ui/icons/Edit';
 import AddIcon from '@material-ui/icons/Add';
 import photo from '../../files/fir.jpg'
 
@@ -39,14 +40,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 4, 3),
     borderRadius: '20px',
   },
-  text: {
-    //color: theme.palette.text.primary, // Set the default text color
-    transition: 'color 0.3s', // Add a smooth transition for the color change
-    '&:hover': {
-      color: '#004431', // Set the color on hover
-    }
-  },
-  test: { color: '#00A881', marginLeft: "15px" }
+  avatr: { color: '#00A881', backgroundColor: '#CCEEE6' }
 }));
 
 export default function SimpleModal() {
@@ -78,17 +72,17 @@ export default function SimpleModal() {
           user.memberList.map((member, i) =>
             <div key={i}><ListItem button onClick={() => { changeUser(i); handleClose() }}>
               <ListItemIcon>
-                <Avatar><PersonIcon /></Avatar>
+                <Avatar className={classes.avatr}><PersonIcon /></Avatar>
               </ListItemIcon>
-              <ListItemText className={classes.text} primary={member.name} />
+              <ListItemText primary={member.name} />
             </ListItem>
               <Divider /></div>
           )
         }
         <div>
-          <ListItem button className={classes.text}>
+          <ListItem button>
             <ListItemIcon>
-              <Avatar>
+              <Avatar className={classes.avatr}>
                 <AddIcon />
               </Avatar>
             </ListItemIcon>
@@ -97,9 +91,20 @@ export default function SimpleModal() {
           <Divider />
         </div>
         <div>
-          <ListItem button className={classes.text}>
+          <ListItem button>
             <ListItemIcon>
-              <Avatar>
+              <Avatar className={classes.avatr}>
+                <EditIcon />
+              </Avatar>
+            </ListItemIcon>
+            <ListItemText primary={`Edit ${user.memberList[0].name} Profile`} />
+          </ListItem>
+          <Divider />
+        </div>
+        <div>
+          <ListItem button >
+            <ListItemIcon>
+              <Avatar className={classes.avatr}>
                 <ExitToAppIcon />
               </Avatar>
             </ListItemIcon>
@@ -115,7 +120,7 @@ export default function SimpleModal() {
   return (
     <div>
       {/* <button type="button" onClick={handleOpen}> */}
-      <Avatar onClick={handleOpen} title={user.memberList[user.selectedUser].name}>
+      <Avatar onClick={handleOpen} title={user.memberList[user.selectedUser].name} style={{ color: '#00A881', backgroundColor: '#CCEEE6' }}>
         {photo === true ? <img src={photo} width={40} height={40} alt='firdous' /> : user.memberList[user.selectedUser].name.charAt(0).toUpperCase()}
       </Avatar>
       {/* </button> */}

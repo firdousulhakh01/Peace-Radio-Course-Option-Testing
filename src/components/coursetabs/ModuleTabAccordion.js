@@ -104,8 +104,10 @@ const Accordion = withStyles({
 
 const AccordionSummary = withStyles({
   root: {
-    // backgroundColor: 'rgba(0, 0, 0, .03)',
+    // backgroundColor: 'red',
     // borderBottom: '1px solid rgba(0, 0, 0, .125)',
+    // position: 'sticky',
+    // top: '56px',
     marginBottom: -1,
     minHeight: 56,
     '&$expanded': {
@@ -164,10 +166,15 @@ function ModuleTabAccordion() {
     <div className={classes.root}>
       {course.moduleTabData && course.moduleTabData.modulesList[0].questionsList.map(
         (cl, index) =>
-          <Accordion expanded={expanded === `panel${index + 1}`} onChange={handleChange(`panel${index + 1}`)} key={index} elevation={2}>
+          <Accordion expanded={expanded === `panel${index + 1}`} onChange={handleChange(`panel${index + 1}`)} key={index} elevation={2} >
+            {/* <div style={{ position: 'sticky', top: '10px' }}> */}
+
+
             <AccordionSummary
               expandIcon={<ExpandMoreIcon className={classes.expandIcon} />}
-              aria-controls={`panel${index + 1}d-content`} id={`panel${index + 1}d-header`}>
+              aria-controls={`panel${index + 1}d-content`} id={`panel${index + 1}d-header`}
+
+            >
               <Avatar className={classes.avatar}>
                 <SchoolIcon />
               </Avatar>
@@ -201,6 +208,7 @@ function ModuleTabAccordion() {
               </Fade>
 
             </AccordionSummary>
+            {/* </div> */}
             <AccordionDetails>
               {/* <Typography className={classes.detailText}>{cl.referenceText.replace(removeHtml, '').replace(/(\r\n|\r|\n)+/g, '$1') }</Typography> */}
               <ClassReferenceQuestionTab cl={cl} />

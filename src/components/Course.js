@@ -49,7 +49,7 @@ function Course({ courseProp, key }) {
         />
         <ListItemSecondaryAction>
           {courseProp.enrolled !== 'N' ? <CircularProgressWithLabel value={courseProp.percentageCompletion} /> :
-            <Button variant="contained" size="small" style={{ fontSize: '0.7rem', marginBottom: '1.5rem' }}>Enroll</Button>}
+            <Button variant="contained" size="small" style={{ marginBottom: '1.5rem', textTransform: 'none', color: "#00A881" }} color="secondary">Enroll</Button>}
 
         </ListItemSecondaryAction>
       </ListItem>
