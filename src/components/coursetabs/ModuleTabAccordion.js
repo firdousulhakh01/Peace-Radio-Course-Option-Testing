@@ -206,7 +206,6 @@ function ModuleTabAccordion() {
                 </Avatar>
 
               </Fade>
-
             </AccordionSummary>
             {/* </div> */}
             <AccordionDetails>

@@ -1,11 +1,13 @@
 import React from 'react'
-import { Typography, Avatar } from '@material-ui/core'
+import { Typography, Avatar, Fade } from '@material-ui/core'
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import { withStyles } from '@material-ui/core/styles';
 import SchoolIcon from '@material-ui/icons/School';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import GetAppIcon from '@material-ui/icons/GetApp';
+import logo from '../../files/Peaceradio-logo.png';
 // import Mqs from '../coursetabs/QuestionDisplay'
 
 const Accordion = withStyles({
@@ -60,7 +62,7 @@ const AccordionDetails = withStyles((theme) => ({
 const Menu = (props) => {
   // console.log(props.abc === props.idd)
   return (
-    <Accordion onChange={props.fn(props.idd)} expanded={props.abc === props.idd} elevation={2} style={{ position: 'sticky', top: '300px' }}>
+    <Accordion onChange={props.fn(props.idd)} expanded={props.abc === props.idd} elevation={2}>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon className={props.classes.expandIcon} />}
         aria-controls=""
@@ -71,10 +73,23 @@ const Menu = (props) => {
           <SchoolIcon />
         </Avatar>
         <Typography className={props.classes.heading}>{props.label}</Typography>
+        <Fade
+          in={props.abc === props.idd}
+          timeout={500}
+        >
+          <Avatar className={props.classes.avatarPlay}>
+            <GetAppIcon />
+          </Avatar>
+
+        </Fade>
       </AccordionSummary>
       <AccordionDetails>
+        <img src={logo} alt='peaceradio' style={{ paddingLeft: '20px', width: '33.33%' }} />
         <div style={{ padding: '25px' }}>
-          Content here
+          ആശയസ്വീകരണത്തിനും ദൈവസ്മരണകൾക്കും വിനോദത്തിനുമെല്ലാമുള്ള മനുഷ്യന്റെ പ്രധാന സ്രോതസ്സാണ് കേൾവി.
+          എന്നാൽ അഹിതമായതിനോട് ചെവിയടക്കാൻ കഴിയാത്തതിനാൽ തന്നെ ശബ്ദഘോഷങ്ങളുടെ മലവെള്ളപ്പാച്ചിലിൽ എല്ലാം കേൾക്കാൻ നിർബന്ധിതനായിരിക്കുന്നു അവൻ.
+          നല്ലത് തിരഞ്ഞെടുക്കാൻ പോലും അപ്രിയമായത് കേൾക്കേണ്ട ദുരവസ്ഥയിലാണ് ഓരോരുത്തരും.
+          സെലിബ്രിറ്റി മാനസികാവസ്ഥയുള്ള യുവാക്കൾ ഏറിയ പങ്കും പ്രേക്ഷകരായുള്ള ഒരു സംവിധാനത്തിലേക്കാണ് മൂല്യവത്തായ ആശയങ്ങൾ മാത്രമുൾക്കൊള്ളുന്ന പീസ് റേഡിയോ കടന്നുവരുന്നത്..!
         </div>
       </AccordionDetails>
     </Accordion>
