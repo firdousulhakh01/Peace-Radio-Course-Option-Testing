@@ -136,9 +136,10 @@ function ModuleTabAccordion() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState('');
   // const [test, setTest] = useState(['Course Work', 'Review'])
-
+  var p = 19
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
+    // console.log()
   };
 
   const { player, setPlayer } = useContext(PlayerContext);
@@ -161,10 +162,10 @@ function ModuleTabAccordion() {
     });
     // setPlaying(true);
   }
-  console.log(course, 'testt')
+  console.log(course.moduleTabData.modulesList[0].questionsList[1])
   return (
     <div className={classes.root}>
-      {course.moduleTabData && course.moduleTabData.modulesList[0].questionsList.map(
+      {course.moduleTabData && course.moduleTabData.modulesList[0].questionsList.filter((cl, i) => i < p).map(
         (cl, index) =>
           <Accordion expanded={expanded === `panel${index + 1}`} onChange={handleChange(`panel${index + 1}`)} key={index} elevation={2} >
             {/* <div style={{ position: 'sticky', top: '10px' }}> */}
@@ -217,6 +218,57 @@ function ModuleTabAccordion() {
       )}
 
       <Menu classes={classes} label="Course Work" fn={handleChange} abc={expanded} idd="a1" />
+      {course.moduleTabData && course.moduleTabData.modulesList[0].questionsList.filter((cl, i) => i >= p).map(
+        (cl, index) =>
+          <Accordion expanded={expanded === `panel${index + p}`} onChange={handleChange(`panel${index + p}`)} key={index} elevation={2} >
+            {/* <div style={{ position: 'sticky', top: '10px' }}> */}
+
+
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon className={classes.expandIcon} />}
+              aria-controls={`panel${index + p}d-content`} id={`panel${index + p}d-header`}
+
+            >
+              <Avatar className={classes.avatar}>
+                <SchoolIcon />
+              </Avatar>
+              <Typography className={classes.heading}>Class {cl.class}</Typography>
+              <Fade
+                in={expanded === `panel${(index + p)}`}
+                timeout={500}
+              >
+
+                <Typography className={classes.subHead}>Class short details</Typography>
+
+
+              </Fade>
+              <Fade
+                in={expanded === `panel${(index + p)}`}
+                timeout={500}
+              >
+                <Avatar className={classes.avatarPlay}>
+                  <VideocamIcon />
+                </Avatar>
+
+              </Fade>
+              <Fade
+                in={expanded === `panel${(index + p)}`}
+                timeout={500}
+              >
+                <Avatar onClick={(e) => handlePlay(index, cl, e)} className={classes.avatarPlay}>
+                  <PlayArrowIcon />
+                </Avatar>
+
+              </Fade>
+            </AccordionSummary>
+            {/* </div> */}
+            <AccordionDetails>
+              {/* <Typography className={classes.detailText}>{cl.referenceText.replace(removeHtml, '').replace(/(\r\n|\r|\n)+/g, '$1') }</Typography> */}
+              <ClassReferenceQuestionTab cl={cl} />
+
+            </AccordionDetails>
+          </Accordion>
+      )}
       <Menu classes={classes} label="Review" fn={handleChange} abc={expanded} idd="a2" />
       <Menu classes={classes} label="Result" fn={handleChange} abc={expanded} idd="a3" />
       <Menu classes={classes} label="Feedback" fn={handleChange} abc={expanded} idd="a4" />

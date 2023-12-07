@@ -74,11 +74,11 @@ function QuestionDisplay(props) {
   // console.log(`https://prms.peaceradio.com/courses_new/${qsObj[0].questionAudio}`)
   return (
     <div>
+      <Typography className={classes.detailQuestionText}>1) {qsObj[0].question}</Typography>
       <audio controls>
         <source src={`https://prms.peaceradio.com/courses_new/${qsObj[0].questionAudio}`} type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
-      <Typography className={classes.detailQuestionText}>{qsObj[0].question}</Typography>
       <FormControl component="fieldset" classes={{ root: classes.optionGroup }}>
         <RadioGroup aria-label="answer" name="answer1" value={value0} onChange={e => handleChange(0, e)}>
           <FormControlLabel classes={{ root: classes.detailOptionRoot, label: classes.detailOptionText }} value="A" control={<Radio classes={{ root: classes.radioRoot }} />} label={qsObj[0].answerOptionA} />
@@ -87,11 +87,11 @@ function QuestionDisplay(props) {
         </RadioGroup>
       </FormControl>
       <Divider />
+      <Typography className={classes.detailQuestionText}>2) {qsObj[1].question}</Typography>
       <audio controls>
         <source src={`https://prms.peaceradio.com/courses_new/${qsObj[1].questionAudio}`} type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
-      <Typography className={classes.detailQuestionText}>{qsObj[1].question}</Typography>
       <FormControl component="fieldset" classes={{ root: classes.optionGroup }}>
         <RadioGroup aria-label="answer" name="answer1" value={value1} onChange={e => handleChange(1, e)}>
           <FormControlLabel classes={{ root: classes.detailOptionRoot, label: classes.detailOptionText }} value="A" control={<Radio classes={{ root: classes.radioRoot }} />} label={qsObj[1].answerOptionA} />
@@ -100,11 +100,11 @@ function QuestionDisplay(props) {
         </RadioGroup>
       </FormControl>
       <Divider />
+      <Typography className={classes.detailQuestionText}>3) {qsObj[2].question}</Typography>
       <audio controls>
         <source src={`https://prms.peaceradio.com/courses_new/${qsObj[2].questionAudio}`} type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
-      <Typography className={classes.detailQuestionText}>{qsObj[2].question}</Typography>
       <FormControl component="fieldset" classes={{ root: classes.optionGroup }}>
         <RadioGroup aria-label="answer" name="answer1" value={value2} onChange={e => handleChange(2, e)}>
           <FormControlLabel classes={{ root: classes.detailOptionRoot, label: classes.detailOptionText }} value="A" control={<Radio classes={{ root: classes.radioRoot }} />} label={qsObj[2].answerOptionA} />

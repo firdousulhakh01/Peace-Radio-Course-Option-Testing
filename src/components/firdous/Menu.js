@@ -7,7 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
 import SchoolIcon from '@material-ui/icons/School';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import GetAppIcon from '@material-ui/icons/GetApp';
-import logo from '../../files/Peaceradio-logo.png';
+// import logo from '../../files/Peaceradio-logo.png';
 // import Mqs from '../coursetabs/QuestionDisplay'
 
 const Accordion = withStyles({
@@ -60,6 +60,7 @@ const AccordionDetails = withStyles((theme) => ({
 }))(MuiAccordionDetails);
 
 const Menu = (props) => {
+  var c = 'lightgreen'
   // console.log(props.abc === props.idd)
   return (
     <Accordion onChange={props.fn(props.idd)} expanded={props.abc === props.idd} elevation={2}>
@@ -67,7 +68,7 @@ const Menu = (props) => {
         expandIcon={<ExpandMoreIcon className={props.classes.expandIcon} />}
         aria-controls=""
         id=""
-
+        style={{ backgroundColor: props.label === 'Course Work' ? `${c}` : '' }}
       >
         <Avatar className={props.classes.avatar}>
           <SchoolIcon />
@@ -86,7 +87,8 @@ const Menu = (props) => {
       </AccordionSummary>
       <AccordionDetails>
         {props.label === 'Course Work' ? <>
-          <img src={logo} alt='peaceradio' style={{ paddingLeft: '20px', width: '33.33%' }} />
+          {/* <img src={logo} alt='peaceradio' style={{ paddingLeft: '20px', width: '33.33%' }} /> */}
+          <Typography variant='subtitle1' style={{ padding: '0 25px', backgroundColor: 'lightgrey', color: 'black' }}>Course Work heading</Typography>
           <div style={{ padding: '25px' }}>
             ആശയസ്വീകരണത്തിനും ദൈവസ്മരണകൾക്കും വിനോദത്തിനുമെല്ലാമുള്ള മനുഷ്യന്റെ പ്രധാന സ്രോതസ്സാണ് കേൾവി.
             എന്നാൽ അഹിതമായതിനോട് ചെവിയടക്കാൻ കഴിയാത്തതിനാൽ തന്നെ ശബ്ദഘോഷങ്ങളുടെ മലവെള്ളപ്പാച്ചിലിൽ എല്ലാം കേൾക്കാൻ നിർബന്ധിതനായിരിക്കുന്നു അവൻ.
