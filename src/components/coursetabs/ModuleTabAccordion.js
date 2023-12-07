@@ -136,7 +136,7 @@ function ModuleTabAccordion() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState('');
   // const [test, setTest] = useState(['Course Work', 'Review'])
-  var p = 19
+  var p = 9
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
     // console.log()
@@ -220,13 +220,13 @@ function ModuleTabAccordion() {
       <Menu classes={classes} label="Course Work" fn={handleChange} abc={expanded} idd="a1" />
       {course.moduleTabData && course.moduleTabData.modulesList[0].questionsList.filter((cl, i) => i >= p).map(
         (cl, index) =>
-          <Accordion expanded={expanded === `panel${index + p}`} onChange={handleChange(`panel${index + p}`)} key={index} elevation={2} >
+          <Accordion expanded={expanded === `panel${index + p + 1}`} onChange={handleChange(`panel${index + p + 1}`)} key={index} elevation={2} >
             {/* <div style={{ position: 'sticky', top: '10px' }}> */}
 
 
             <AccordionSummary
               expandIcon={<ExpandMoreIcon className={classes.expandIcon} />}
-              aria-controls={`panel${index + p}d-content`} id={`panel${index + p}d-header`}
+              aria-controls={`panel${index + p + 1}d-content`} id={`panel${index + p + 1}d-header`}
 
             >
               <Avatar className={classes.avatar}>
@@ -234,7 +234,7 @@ function ModuleTabAccordion() {
               </Avatar>
               <Typography className={classes.heading}>Class {cl.class}</Typography>
               <Fade
-                in={expanded === `panel${(index + p)}`}
+                in={expanded === `panel${(index + p + 1)}`}
                 timeout={500}
               >
 
@@ -243,7 +243,7 @@ function ModuleTabAccordion() {
 
               </Fade>
               <Fade
-                in={expanded === `panel${(index + p)}`}
+                in={expanded === `panel${(index + p + 1)}`}
                 timeout={500}
               >
                 <Avatar className={classes.avatarPlay}>
@@ -252,7 +252,7 @@ function ModuleTabAccordion() {
 
               </Fade>
               <Fade
-                in={expanded === `panel${(index + p)}`}
+                in={expanded === `panel${(index + p + 1)}`}
                 timeout={500}
               >
                 <Avatar onClick={(e) => handlePlay(index, cl, e)} className={classes.avatarPlay}>
