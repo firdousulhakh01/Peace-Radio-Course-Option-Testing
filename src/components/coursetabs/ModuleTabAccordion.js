@@ -136,7 +136,8 @@ function ModuleTabAccordion() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState('');
   // const [test, setTest] = useState(['Course Work', 'Review'])
-  var p = 9
+  var p = 10, dynaLab = 'Course Work'//Course Work,Assignment
+
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
     // console.log()
@@ -179,16 +180,12 @@ function ModuleTabAccordion() {
               <Avatar className={classes.avatar}>
                 <SchoolIcon />
               </Avatar>
+              {/* <div> */}
               <Typography className={classes.heading}>Class {cl.class}</Typography>
-              <Fade
-                in={expanded === `panel${(index + 1)}`}
-                timeout={500}
-              >
-
-                <Typography className={classes.subHead}>Class short details</Typography>
-
-
-              </Fade>
+              {/* <Fade in={expanded === `panel${(index + 1)}`} timeout={500}>
+                  <Typography className={classes.subHead}>Class short details</Typography>
+                </Fade> */}
+              {/* </div> */}
               <Fade
                 in={expanded === `panel${(index + 1)}`}
                 timeout={500}
@@ -217,7 +214,12 @@ function ModuleTabAccordion() {
           </Accordion>
       )}
 
-      <Menu classes={classes} label="Course Work" fn={handleChange} abc={expanded} idd="a1" />
+      <Menu classes={classes} label={dynaLab} fn={handleChange} abc={expanded} idd="a1" data={{
+        d1: `ആശയസ്വീകരണത്തിനും ദൈവസ്മരണകൾക്കും വിനോദത്തിനുമെല്ലാമുള്ള മനുഷ്യന്റെ പ്രധാന സ്രോതസ്സാണ് കേൾവി.
+            എന്നാൽ അഹിതമായതിനോട് ചെവിയടക്കാൻ കഴിയാത്തതിനാൽ തന്നെ ശബ്ദഘോഷങ്ങളുടെ മലവെള്ളപ്പാച്ചിലിൽ എല്ലാം കേൾക്കാൻ നിർബന്ധിതനായിരിക്കുന്നു അവൻ.
+            നല്ലത് തിരഞ്ഞെടുക്കാൻ പോലും അപ്രിയമായത് കേൾക്കേണ്ട ദുരവസ്ഥയിലാണ് ഓരോരുത്തരും.
+            സെലിബ്രിറ്റി മാനസികാവസ്ഥയുള്ള യുവാക്കൾ ഏറിയ പങ്കും പ്രേക്ഷകരായുള്ള ഒരു സംവിധാനത്തിലേക്കാണ് മൂല്യവത്തായ ആശയങ്ങൾ മാത്രമുൾക്കൊള്ളുന്ന പീസ് റേഡിയോ കടന്നുവരുന്നത്..!`, d2: 'content here'
+      }} />
       {course.moduleTabData && course.moduleTabData.modulesList[0].questionsList.filter((cl, i) => i >= p).map(
         (cl, index) =>
           <Accordion expanded={expanded === `panel${index + p + 1}`} onChange={handleChange(`panel${index + p + 1}`)} key={index} elevation={2} >
@@ -233,7 +235,7 @@ function ModuleTabAccordion() {
                 <SchoolIcon />
               </Avatar>
               <Typography className={classes.heading}>Class {cl.class}</Typography>
-              <Fade
+              {/* <Fade
                 in={expanded === `panel${(index + p + 1)}`}
                 timeout={500}
               >
@@ -241,7 +243,7 @@ function ModuleTabAccordion() {
                 <Typography className={classes.subHead}>Class short details</Typography>
 
 
-              </Fade>
+              </Fade> */}
               <Fade
                 in={expanded === `panel${(index + p + 1)}`}
                 timeout={500}

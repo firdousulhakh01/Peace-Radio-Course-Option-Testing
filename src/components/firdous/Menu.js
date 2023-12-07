@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, Avatar, Fade } from '@material-ui/core'
+import { Typography, Avatar, Fade, Button } from '@material-ui/core'
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
@@ -62,40 +62,81 @@ const AccordionDetails = withStyles((theme) => ({
 const Menu = (props) => {
   var c = 'lightcoral'
   // console.log(props.abc === props.idd)
+  if (props.label === 'Course Work') {
+    return (
+      <Accordion onChange={props.fn(props.idd)} expanded={props.abc === props.idd} elevation={2}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon className={props.classes.expandIcon} />}
+          aria-controls=""
+          id=""
+          style={{ backgroundColor: `${c}` }}
+        >
+          <Avatar className={props.classes.avatar}>
+            <SchoolIcon />
+          </Avatar>
+          <Typography className={props.classes.heading}>{props.label}</Typography>
+          <Fade
+            in={props.abc === props.idd}
+            timeout={500}
+          >
+            <Avatar className={props.classes.avatarPlay}>
+              <GetAppIcon />
+            </Avatar>
+
+          </Fade>
+
+        </AccordionSummary>
+        <AccordionDetails>
+
+          <Typography variant='subtitle1' style={{ padding: '0 25px', backgroundColor: 'lightgrey', color: 'black' }}>Course Work heading</Typography>
+          <div style={{ padding: '25px' }}>
+            {props.data.d1}
+          </div>
+
+
+        </AccordionDetails>
+      </Accordion>
+
+    )
+  }
+  if (props.label === 'Assignment') {
+    return (
+      <Accordion onChange={props.fn(props.idd)} expanded={props.abc === props.idd} elevation={2}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon className={props.classes.expandIcon} />}
+          aria-controls=""
+          id=""
+          style={{ backgroundColor: `${c}` }}
+        >
+          <Avatar className={props.classes.avatar}>
+            <SchoolIcon />
+          </Avatar>
+          <Typography className={props.classes.heading}>{props.label}</Typography>
+
+        </AccordionSummary>
+        <AccordionDetails>
+          <div style={{ padding: '25px' }}>{props.data.d2}</div>
+          <Button variant='contained' style={{ width: '25%', margin: '10px auto', textTransform: 'none' }} color='secondary'>Upload</Button>
+
+        </AccordionDetails>
+      </Accordion>
+    )
+  }
   return (
     <Accordion onChange={props.fn(props.idd)} expanded={props.abc === props.idd} elevation={2}>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon className={props.classes.expandIcon} />}
         aria-controls=""
         id=""
-        style={{ backgroundColor: props.label === 'Course Work' ? `${c}` : '' }}
       >
         <Avatar className={props.classes.avatar}>
           <SchoolIcon />
         </Avatar>
         <Typography className={props.classes.heading}>{props.label}</Typography>
-        {props.label === 'Course Work' ? <Fade
-          in={props.abc === props.idd}
-          timeout={500}
-        >
-          <Avatar className={props.classes.avatarPlay}>
-            <GetAppIcon />
-          </Avatar>
-
-        </Fade> : ''}
 
       </AccordionSummary>
       <AccordionDetails>
-        {props.label === 'Course Work' ? <>
-          {/* <img src={logo} alt='peaceradio' style={{ paddingLeft: '20px', width: '33.33%' }} /> */}
-          <Typography variant='subtitle1' style={{ padding: '0 25px', backgroundColor: 'lightgrey', color: 'black' }}>Course Work heading</Typography>
-          <div style={{ padding: '25px' }}>
-            ആശയസ്വീകരണത്തിനും ദൈവസ്മരണകൾക്കും വിനോദത്തിനുമെല്ലാമുള്ള മനുഷ്യന്റെ പ്രധാന സ്രോതസ്സാണ് കേൾവി.
-            എന്നാൽ അഹിതമായതിനോട് ചെവിയടക്കാൻ കഴിയാത്തതിനാൽ തന്നെ ശബ്ദഘോഷങ്ങളുടെ മലവെള്ളപ്പാച്ചിലിൽ എല്ലാം കേൾക്കാൻ നിർബന്ധിതനായിരിക്കുന്നു അവൻ.
-            നല്ലത് തിരഞ്ഞെടുക്കാൻ പോലും അപ്രിയമായത് കേൾക്കേണ്ട ദുരവസ്ഥയിലാണ് ഓരോരുത്തരും.
-            സെലിബ്രിറ്റി മാനസികാവസ്ഥയുള്ള യുവാക്കൾ ഏറിയ പങ്കും പ്രേക്ഷകരായുള്ള ഒരു സംവിധാനത്തിലേക്കാണ് മൂല്യവത്തായ ആശയങ്ങൾ മാത്രമുൾക്കൊള്ളുന്ന പീസ് റേഡിയോ കടന്നുവരുന്നത്..!
-          </div>
-        </> : <div style={{ padding: '25px' }}>Content here</div>}
+        <div style={{ padding: '25px' }}>Content here</div>
 
       </AccordionDetails>
     </Accordion>
