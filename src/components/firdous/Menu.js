@@ -60,7 +60,7 @@ const AccordionDetails = withStyles((theme) => ({
 }))(MuiAccordionDetails);
 
 const Menu = (props) => {
-  var c = 'lightcoral'
+  var c = 'lightgreen', a = 'lightblue'
   // console.log(props.abc === props.idd)
   if (props.label === 'Course Work') {
     return (
@@ -106,7 +106,7 @@ const Menu = (props) => {
           expandIcon={<ExpandMoreIcon className={props.classes.expandIcon} />}
           aria-controls=""
           id=""
-          style={{ backgroundColor: `${c}` }}
+          style={{ backgroundColor: `${a}` }}
         >
           <Avatar className={props.classes.avatar}>
             <SchoolIcon />
@@ -115,7 +115,7 @@ const Menu = (props) => {
 
         </AccordionSummary>
         <AccordionDetails>
-          <div style={{ padding: '25px' }}>{props.data.d2}</div>
+          <div style={{ padding: '25px' }}>Content here</div>
           <Button variant='contained' style={{ width: '25%', margin: '10px auto', textTransform: 'none' }} color='secondary'>Upload</Button>
 
         </AccordionDetails>

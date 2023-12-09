@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.dark,
   },
   detail: {
-    // padding: '0px 16px 16px',
+    // padding: '0px 16px 16px', 
   },
   expandIcon: {
     color: theme.palette.primary.main,
