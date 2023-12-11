@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 // import CourseSelectionCard from './CourseSelectionCard';
 import CourseHomeAccordion from './CourseHomeAccordian';
 import homeTabFetch from '../../utils/hometab';
@@ -8,13 +8,13 @@ import { CourseContext } from '../../contexts/CourseContext';
 function HomeTab() {
   const { course, setCourse } = useContext(CourseContext);
   const { user } = useContext(UserContext);
-  const [, setHomeTabData] = useState(null)
+  // const [, setHomeTabData] = useState()
 
   useEffect(() => {
     async function getHomeTabData() {
-      // console.log(`homeTab`)
+      console.log(`homeTab`)
       const res = await homeTabFetch(window.myToken, course.selectedCourse.type, user.memberList[user.selectedUser].rollNumber);
-      setHomeTabData(res)
+      // setHomeTabData(res)
       setCourse({ ...course, homeTabData: res })
     }
     getHomeTabData();
@@ -22,10 +22,10 @@ function HomeTab() {
   }, [])
   // console.log(course, "test")
   return (
-    <React.Fragment>
+    <>
       {/* <CourseSelectionCard /> */}
       <CourseHomeAccordion />
-    </React.Fragment>
+    </>
   )
 }
 

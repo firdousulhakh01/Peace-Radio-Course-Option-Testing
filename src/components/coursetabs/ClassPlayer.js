@@ -10,6 +10,7 @@ import PauseIcon from '@material-ui/icons/Pause';
 import Forward10Icon from '@material-ui/icons/Forward10';
 import Replay10Icon from '@material-ui/icons/Replay10';
 import Replay30Icon from '@material-ui/icons/Replay30';
+import ShareIcon from '@material-ui/icons/Share';
 import { PlayerContext } from '../../contexts/PlayerContext';
 import CloseIcon from '@material-ui/icons/Close';
 import Zoom from '@material-ui/core/Zoom';
@@ -111,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
 const playbackRateArray = [1, 1.25, 1.5]
 
 // console.log("t1")
-function ClassPlayer({ classData }) {
+function ClassPlayer() {
   const [pbrIndex, setPbrIndex] = useState(0)
 
   const audioElement = useRef(null);
@@ -183,8 +184,11 @@ function ClassPlayer({ classData }) {
             <Typography component="h5" variant="h5" className={classes.classDesc}>
               {seeking ? "Buffering" : player.loadedClass.className}
             </Typography>
+            <IconButton aria-label="previous" className={classes.closeButton} >
+              <ShareIcon />
+            </IconButton>
             <IconButton aria-label="previous" onClick={handleCloseRequest} className={classes.closeButton} >
-              <CloseIcon className={classes.closeButtonIcon} />
+              <CloseIcon />
             </IconButton>
           </CardContent>
           <div className={classes.seekBar}>

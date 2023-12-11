@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
+import Badge from '@material-ui/core/Badge';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MailIcon from '@material-ui/icons/Mail';
@@ -58,9 +59,15 @@ const useStyles = makeStyles((theme) => ({
 function CourseHomeAccordion() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  const [expandedd, setExpandedd] = React.useState(false);
+  var activeF = 'Class Test';//Active Examination,
 
   const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
+    if (panel === 'panel3')
+      setExpandedd(!isExpanded ? panel : false);
+    else
+      setExpanded(isExpanded ? panel : false);
+    console.log(isExpanded)
   };
 
   return (
@@ -69,11 +76,13 @@ function CourseHomeAccordion() {
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} className={{ expanded: classes.expanded, root: classes.accordionRoot }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon className={classes.expandIcon} />}
-          aria-controls="panel1bh-content"
-          id="panel1bh-header"
+          aria-controls=""
+          id=""
           className={classes.summary}
         >
-          <MailIcon className={classes.headingIcon} /><Typography className={classes.heading}>Announcements</Typography>
+          <Badge badgeContent={3} color="primary"><MailIcon className={classes.headingIcon} /></Badge>
+
+          <Typography className={classes.heading} style={{ marginLeft: '10px' }}>Announcements</Typography>
           {/* <Typography className={classes.secondaryHeading}>I am an accordion</Typography> */}
         </AccordionSummary>
         <AccordionDetails className={classes.detail}>
@@ -82,14 +91,14 @@ function CourseHomeAccordion() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion className={classes.accordionRoot} expanded={true}>
+      <Accordion className={{ expanded: classes.expanded, root: classes.accordionRoot }} expanded={expandedd !== 'panel3'} onChange={handleChange('panel3')}>
         <AccordionSummary
-
-          aria-controls="panel2bh-content"
-          id="panel2bh-header"
+          expandIcon={<ExpandMoreIcon className={classes.expandIcon} />}
+          aria-controls=""
+          id=""
           className={classes.summary}
         >
-          <AssignmentIcon className={classes.headingIcon} /><Typography className={classes.heading}>Active Examination</Typography>
+          <AssignmentIcon className={classes.headingIcon} /><Typography className={classes.heading}>{activeF}</Typography>
           {/* <Typography className={classes.secondaryHeading}>
                         You are currently not an owner
                     </Typography> */}
@@ -103,8 +112,8 @@ function CourseHomeAccordion() {
       <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} className={{ expanded: classes.expanded, root: classes.accordionRoot }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon className={classes.expandIcon} />}
-          aria-controls="panel3bh-content"
-          id="panel3bh-header"
+          aria-controls=""
+          id=""
           className={classes.summary}
         >
           <AssignmentIcon className={classes.headingIcon} /><Typography className={classes.heading}>Instructions and Course Calendar</Typography>
@@ -114,7 +123,25 @@ function CourseHomeAccordion() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography className={classes.detailText}>
-            The examination which is active today will be displayed in this area. At time of regular classes, class test questions appear here. At period of model exam, model exam start button appears here.  At time of final examination, final exam start button appear here.
+            Content here...
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')} className={{ expanded: classes.expanded, root: classes.accordionRoot }}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon className={classes.expandIcon} />}
+          aria-controls=""
+          id=""
+          className={classes.summary}
+        >
+          <AssignmentIcon className={classes.headingIcon} /><Typography className={classes.heading}>Future Card</Typography>
+          {/* <Typography className={classes.secondaryHeading}>
+                        You are currently not an owner
+                    </Typography> */}
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography className={classes.detailText}>
+            Content here...
           </Typography>
         </AccordionDetails>
       </Accordion>
