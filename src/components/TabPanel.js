@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-function TabPanel(props) {
+const TabPanel = (props) => {
   const classes = useStyles();
 
   const { children, value, index, ...other } = props;

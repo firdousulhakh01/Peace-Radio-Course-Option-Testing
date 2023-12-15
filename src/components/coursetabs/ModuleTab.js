@@ -6,7 +6,7 @@ import ModuleTabAccordion from './ModuleTabAccordion';
 // import { makeStyles} from '@material-ui/core/styles';
 import ListSkeleton from '../../ui/ListSkeleton';
 
-function ModuleTab() {
+const ModuleTab = () => {
   const { course, setCourse } = useContext(CourseContext);
   const { user } = useContext(UserContext);
   const [loader, setLoader] = useState(true);

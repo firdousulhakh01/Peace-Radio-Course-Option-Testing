@@ -1,5 +1,7 @@
 import React from 'react'
-import HelpData from './HelpTabData'
+import Faq from './HelpCards/Faq'
+import LateExamRequest from './HelpCards/LateExamRequest';
+import Sample from './HelpCards/Sample';
 
 const HelpTab = () => {
   const [expanded, setExpanded] = React.useState('');
@@ -10,11 +12,10 @@ const HelpTab = () => {
   };
   return (
     <div style={{ margin: '10px' }}>
-      <HelpData id='h1' label='FAQ' fn={handleChange} exp={expanded} />
-      <HelpData id='h2' label='Late Exam Request' fn={handleChange} exp={expanded} />
-      <HelpData id='h3' label='Testimonials' fn={handleChange} exp={expanded} />
-      <HelpData id='h4' label='Doubt Submission' fn={handleChange} exp={expanded} />
-      {/* <HelpData id='h1' label='FAQ' /> */}
+      <Faq id='h1' handleChange={handleChange} expanded={expanded} />
+      <LateExamRequest id='h2' handleChange={handleChange} expanded={expanded} />
+      <Sample id='h3' label='Testimonials' handleChange={handleChange} expanded={expanded} />
+      <Sample id='h4' label='Doubt Submission' handleChange={handleChange} expanded={expanded} />
     </div>
   )
 }

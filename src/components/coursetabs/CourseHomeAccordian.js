@@ -1,10 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import Badge from '@material-ui/core/Badge';
-import Typography from '@material-ui/core/Typography';
+import { Accordion, AccordionDetails, AccordionSummary, Badge, Typography } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MailIcon from '@material-ui/icons/Mail';
 import AssignmentIcon from '@material-ui/icons/Assignment';
@@ -56,11 +52,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function CourseHomeAccordion() {
+const CourseHomeAccordion = () => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [expandedd, setExpandedd] = React.useState(false);
-  var activeF = 'Class Test';//Active Examination,
+  var activeF = 'Active Examination';//Active Examination,Class Test
 
   const handleChange = (panel) => (event, isExpanded) => {
     if (panel === 'panel3')

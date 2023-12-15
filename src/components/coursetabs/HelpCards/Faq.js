@@ -1,16 +1,12 @@
-import React from 'react'
-import { Typography, Avatar } from '@material-ui/core'
+import React from 'react';
+import { Typography, Avatar } from '@material-ui/core';
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
-// import SchoolIcon from '@material-ui/icons/School';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
-// import HelpIcon from '@material-ui/icons/Help';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
-// import { Document } from 'react-pdf/dist/esm';
-// import pdfPath from '../../files/girls.pdf'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,7 +56,8 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     right: theme.spacing(3),
   },
-}))
+}));
+
 const Accordion = withStyles({
   root: {
     // border: '1px solid rgba(0, 0, 0, .125)',
@@ -109,64 +106,20 @@ const AccordionDetails = withStyles((theme) => ({
     flexDirection: 'column',
   },
 }))(MuiAccordionDetails);
-var abc = [1, 2, 3, 4, 5]
-const HelpTab = (props) => {
-  // const pdfPath=''
+
+let QuestionCount = [1, 2, 3, 4, 5]
+
+const Faq = (props) => {
+
   const [expanded, setExpanded] = React.useState('');
-  // const [test, setTest] = useState(['Course Work', 'Review']) 
+  const classes = useStyles();
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
-  const classes = useStyles();
-  // console.log(expanded === props.idd, 'help')
-  if (props.label === 'FAQ')
-    return (
 
-      <Accordion expanded={props.exp === props.id} onChange={props.fn(props.id)}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon className={classes.expandIcon} />}
-          aria-controls=""
-          id=""
-        >
-          <Avatar className={classes.avatar}>
-            <MenuBookIcon />
-          </Avatar>
-          <Typography className={classes.heading}>{props.label}</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <div style={{ padding: '10px' }}>
-            {/* <iframe src={pdfPath} width="100%" height="600" title='Demo'></iframe> */}
-            {
-              abc.map((x, i) =>
-                <Accordion key={i} expanded={expanded === `s${i}`} onChange={handleChange(`s${i}`)}>
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon className={classes.expandIcon} />}
-                    aria-controls=""
-                    id=""
-                    style={{ backgroundColor: 'lightgray' }}
-                  >
-                    <Avatar className={classes.avatar}>
-                      <QuestionAnswerIcon />
-                    </Avatar>
-                    <Typography className={classes.heading}>Question {x}</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <div style={{ padding: '25px' }}>
-                      {/* <iframe src={pdfPath} width="100%" height="600" title='Demo'></iframe> */}
-                      Answer {x}
-                    </div>
-                  </AccordionDetails>
-                </Accordion>
-              )
-            }
-
-          </div>
-        </AccordionDetails>
-      </Accordion>
-    )
   return (
-    <Accordion expanded={props.exp === props.id} onChange={props.fn(props.id)}>
+    <Accordion expanded={props.expanded === props.id} onChange={props.handleChange(props.id)}>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon className={classes.expandIcon} />}
         aria-controls=""
@@ -175,17 +128,37 @@ const HelpTab = (props) => {
         <Avatar className={classes.avatar}>
           <MenuBookIcon />
         </Avatar>
-        <Typography className={classes.heading}>{props.label}</Typography>
+        <Typography className={classes.heading}>FAQ</Typography>
       </AccordionSummary>
       <AccordionDetails>
-        <div style={{ padding: '25px' }}>
-          {/* <iframe src={pdfPath} width="100%" height="600" title='Demo'></iframe> */}
+        <div style={{ padding: '10px' }}>
+          {
+            QuestionCount.map((x, i) =>
+              <Accordion key={i} expanded={expanded === `s${i}`} onChange={handleChange(`s${i}`)}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon className={classes.expandIcon} />}
+                  aria-controls=""
+                  id=""
+                  style={{ backgroundColor: 'lightgray' }}
+                >
+                  <Avatar className={classes.avatar}>
+                    <QuestionAnswerIcon />
+                  </Avatar>
+                  <Typography className={classes.heading}>Question {x}</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <div style={{ padding: '25px' }}>
+                    Answer {x}
+                  </div>
+                </AccordionDetails>
+              </Accordion>
+            )
+          }
 
-          content here
         </div>
       </AccordionDetails>
     </Accordion>
   )
 }
 
-export default HelpTab
+export default Faq

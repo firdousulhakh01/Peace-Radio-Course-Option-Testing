@@ -131,7 +131,7 @@ const AccordionDetails = withStyles((theme) => ({
   },
 }))(MuiAccordionDetails);
 
-function ModuleTabAccordion() {
+const ModuleTabAccordion = () => {
 
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState('');

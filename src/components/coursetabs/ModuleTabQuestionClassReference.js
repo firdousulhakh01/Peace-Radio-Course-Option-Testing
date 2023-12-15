@@ -76,6 +76,7 @@ export default function ScrollableTabsButtonAuto({ cl }) {
   const [fontSiz, setFontSiz] = useState(14)
 
   const handleChange = (event, newValue) => {
+    console.log(newValue)
     setValue(newValue);
   };
 
