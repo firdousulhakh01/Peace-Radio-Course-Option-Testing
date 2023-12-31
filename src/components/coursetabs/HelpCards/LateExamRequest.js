@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Avatar } from '@material-ui/core';
+import { Typography, Avatar, Button, TextField } from '@material-ui/core';
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
@@ -60,6 +60,14 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     right: theme.spacing(3),
   },
+  button: {
+    marginLeft: '70px',
+    //marginTop: '15px'
+  },
+  textField: {
+    width: '130px',
+    //display: 'inline-block'
+  }
 }));
 
 const Accordion = withStyles({
@@ -112,7 +120,7 @@ const AccordionDetails = withStyles((theme) => ({
 }))(MuiAccordionDetails);
 
 const LateExamRequest = (props) => {
-  const [value, setValue] = React.useState();
+  const [value, setValue] = React.useState('');
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -135,16 +143,45 @@ const LateExamRequest = (props) => {
       </AccordionSummary>
       <AccordionDetails>
         <div style={{ padding: '25px' }}>
+          <Typography style={{ marginBottom: '15px' }}>Content here...</Typography>
+          <form>
+            <FormControl component="fieldset">
+              <FormLabel component="legend" style={{ marginBottom: '15px' }}>Select the reason for request:</FormLabel>
+              <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
+                <FormControlLabel value="Reason 1" control={<Radio />} label="Reason 1" />
+                <FormControlLabel value="Reason 2" control={<Radio />} label="Reason 2" />
+                <FormControlLabel value="Reason 3" control={<Radio />} label="Other" style={{ marginBottom: '15px' }} />
+                {value === 'Reason 3' && <TextField id="standard-basic" variant="outlined" size='small' placeholder="Type here" style={{ marginBottom: '15px' }} />}
+              </RadioGroup>
+              <Typography style={{ marginBottom: '15px' }}>Select date:</Typography>
+              <TextField
+                id="date"
+                label="From"
+                type="date"
+                //defaultValue="18-12-2023"
+                style={{ marginBottom: '15px' }}
+                className={classes.textField}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
+              <TextField
+                id="date"
+                label="To"
+                type="date"
+                //defaultValue="2017-05-24"
+                style={{ marginBottom: '15px' }}
+                className={classes.textField}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
+              <Button variant="outlined" color="primary" className={classes.button}>
+                Submit
+              </Button>
+            </FormControl>
 
-
-          <FormControl component="fieldset">
-            <FormLabel component="legend">Select the reason for request:</FormLabel>
-            <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
-              <FormControlLabel value="Reason 1" control={<Radio />} label="Reason 1" />
-              <FormControlLabel value="Reason 2" control={<Radio />} label="Reason 2" />
-              <FormControlLabel value="Reason 3" control={<Radio />} label="Reason 3" />
-            </RadioGroup>
-          </FormControl>
+          </form>
         </div>
       </AccordionDetails>
     </Accordion>
